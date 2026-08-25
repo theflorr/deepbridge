@@ -139,8 +139,7 @@ All JSON. The dashboard uses these; they're equally scriptable.
 deepseekgen/
 ├── app.py                Flask server: REST API + the agent tool-loop
 ├── deepseek_bridge.py    Camoufox automation of chat.deepseek.com
-│                         (SSE capture, DOM fallback,
-│                          mode switching, overlay handling)
+│                         (SSE capture, DOM fallback, mode switching)
 ├── bridge_worker.py      Single-slot job queue on one thread — all Playwright
 │                         calls happen there, Flask threads never touch it
 ├── tools.py              Sandboxed tools + tool_call protocol parser + system prompt
