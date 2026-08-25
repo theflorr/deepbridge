@@ -113,12 +113,6 @@ Switching presets re-prices the entire session history immediately, and (best-ef
 the matching Fast/Expert toggle in the live browser. Note that DeepSeek only allows changing
 mode on a fresh conversation, so a successful switch starts a new chat there.
 
-## Configuration
-
-| Env var | Default | Purpose |
-|---|---|---|
-| `NOPECHA_API_KEY` | key hardcoded in `deepseek_bridge.py` | Captcha solving (hCaptcha / reCAPTCHA v2 / Turnstile) so login and anti-bot interstitials don't block the flow. Solves are rate-limited with cooldown/backoff. |
-
 ## HTTP API
 
 All JSON. The dashboard uses these; they're equally scriptable.
@@ -145,7 +139,7 @@ All JSON. The dashboard uses these; they're equally scriptable.
 deepseekgen/
 ├── app.py                Flask server: REST API + the agent tool-loop
 ├── deepseek_bridge.py    Camoufox automation of chat.deepseek.com
-│                         (SSE capture, DOM fallback, captcha solving,
+│                         (SSE capture, DOM fallback,
 │                          mode switching, overlay handling)
 ├── bridge_worker.py      Single-slot job queue on one thread — all Playwright
 │                         calls happen there, Flask threads never touch it
